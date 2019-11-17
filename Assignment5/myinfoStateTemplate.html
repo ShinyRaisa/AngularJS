@@ -1,0 +1,21 @@
+<legend>Your Information</legend>
+<div ng-if="!myInfoCtrl.userInfo.exists">
+<a ui-sref="public.signup" style="color:#f6b319;"> Sign Up First!</a>
+</div>
+<div ng-if="myInfoCtrl.userInfo.exists">
+<legend>
+	First name: {{myInfoCtrl.userInfo.firstname}} <br>
+    Last name: {{myInfoCtrl.userInfo.lastname}} <br>
+    Email address: {{myInfoCtrl.userInfo.email}} <br>
+    Phone number: {{myInfoCtrl.userInfo.phone}} <br> 
+</legend>
+	<img ng-src="../images/menu/{{myInfoCtrl.userInfo.cat}}/{{myInfoCtrl.userInfo.favdish}}.jpg"> <br>
+	<div style="color:#f6b319;font-size: 21px">
+	{{myInfoCtrl.userInfo.favdish}}<br>
+	{{myInfoCtrl.userInfo.dishinfo.name}}<br>
+	{{myInfoCtrl.userInfo.dishinfo.description}}<br>
+	{{myInfoCtrl.userInfo.dishinfo.price_large | currency:"USD$"}}<br>
+	{{myInfoCtrl.userInfo.dishinfo.price_small | currency:"USD$"}}<br>
+	</div>
+</div>
+

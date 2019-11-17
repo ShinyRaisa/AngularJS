@@ -1,0 +1,12 @@
+<!-- {{ menuItemsCtrl.menuItems  | json }}  -->
+<!-- public.menuitems state view -->
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">{{menuItemsCtrl.menuItems.category.name}} Menu</h2>
+  <div class="text-center">{{menuItemsCtrl.menuItems.category.special_instructions}}</div>
+  
+  <menu-item ng-repeat="menuItem in menuItemsCtrl.menuItems.menu_items" menu-item="menuItem"
+  x="menuItemsCtrl.menuItems.category.short_name">
+  </menu-item>
+</div>
+<!-- -->
+<!-- ng-repeat="name in menuItemsCtrl.menuItems.category" x="name"
