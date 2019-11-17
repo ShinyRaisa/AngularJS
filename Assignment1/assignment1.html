@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" ng-app="LunchCheck">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="assignment1.js"></script>
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+      .form-control { border-color: red; box-shadow: red;}
+    </style>
+  </head>
+<body>
+   <div class="container"  ng-controller='LunchCheckController'>
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control"
+             ng-model='inputtxt'>
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="checkInput()">Check If Too Much</button>
+         </div>
+         <div class="form-group message" ng-style="color()">
+           <!-- Your message can go here. -->
+           <!-- <span ng-style="{'color: red': msg === 'Enjoy', 'color: blue': msg === 'Enter Text First', 'color: green': msg === 'Too Much!'}">{{msg}}</span> -->
+           <!-- <span [ng-style]='{color: red: msg === "Enjoy", color: blue: msg === "Enter Text First", color: green: msg === "Too Much!"}'>{{msg}}</span> -->
+           <span ng-style="{'color': getColor(msg)}">{{msg}}</span>
+          
+         </div>
+   </div>
+
+</body>
+</html>
