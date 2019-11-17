@@ -1,0 +1,7 @@
+<!-- component Template -->
+<h3>Category Component Template</h3>
+<ol>
+  <li ng-repeat="item in $ctrl.name">
+      <a ui-sref="items({categoryShortName: item.short_name})">{{item.name}}</a>
+  </li>
+</ol>
